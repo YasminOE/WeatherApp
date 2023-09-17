@@ -789,7 +789,11 @@ article.container::before{
 
 
 /* Media quires */
-
+@media screen and (max-width : 768px) {
+  .logo img {
+    width: 90px;
+  }
+}
 /* larger than 768px screens */
 
 @media screen and (min-width : 768px) {
