@@ -823,6 +823,9 @@ article.container::before{
 
 
   /* Header */
+  .logo img {
+    width: 90px;
+  }
 
   .header-actions{
     gap: 24px;
