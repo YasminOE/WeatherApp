@@ -4,7 +4,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const _ = require('lodash'); 
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    route: './src/modules/route.js'
+  },
 
   plugins: [
     new HtmlWebpackPlugin({
@@ -29,8 +32,8 @@ module.exports = {
     loader: 'file-loader',
     options: {
       name: '[name].[ext]',
-      outputPath: 'icons/', // Specify the output directory for images
-      publicPath: 'icons/', // Specify the public path for images
+      outputPath: 'assets/', // Specify the output directory for images
+      publicPath: 'assets/', // Specify the public path for images
     },
   },
          },

@@ -1,5 +1,9 @@
 import _ from 'lodash';
 import './style.css';
+import loadPageStructure from './modules/inital-load-page';
 
-const body = document.querySelector('body');
-body.style.background = 'red';
+init();
+
+function init(){
+  loadPageStructure();
+}
