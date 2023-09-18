@@ -25,14 +25,14 @@ export const url = {
     return `https://api.openweathermap.org/data/2.5/air_pollution?${lat}&${lon}&units=metric`;
   },
   reverseGeo(lat,lon){
-    return `https://api.openweathermap.org/geo/2.5/reverse?${lat}&${lon}&limit=5`;
+    return `https://api.openweathermap.org/geo/1.0/reverse?${lat}&${lon}&limit=5`;
   },
   /**
    * 
    * @param {string} query search query e.g: 'London 
    */
   geo(query){
-    return `https://api.openweathermap.org/geo/2.5/direct?q=${query}&limit=5`;
+    return `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5`;
   }
 
 };
