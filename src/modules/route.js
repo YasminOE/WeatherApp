@@ -4,7 +4,7 @@ import _ from 'lodash';
 import {updateWeather, error404} from '../index'
 
 
-const defaultLocation = '#/weather?lat=15.5636&lon=32.5349'; // Khartoum
+const defaultLocation = '#/weather?lat=51.5073219&lon=-0.1276474'; // Khartoum
 
 const currentLocation = function(){
   window.navigator.geolocation.getCurrentPosition(res => {
