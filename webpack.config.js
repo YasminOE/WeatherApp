@@ -5,7 +5,7 @@ const _ = require('lodash');
 
 module.exports = {
   entry: {
-    index: './src/index.js',
+    index: './src/index.js'
     // route: './src/modules/route.js'
   },
 

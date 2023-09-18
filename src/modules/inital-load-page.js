@@ -50,11 +50,7 @@ export default function loadPageStructure(){
   
   const iconBtn = document.createElement('button');
   iconBtn.classList.add('icon-btn','leading-icon', 'has-state');
-  Object.assign(iconBtn,{
-    'aria-label': 'close search',
-    'data-search-toggler': ''
-  });
-  // iconBtn.setAttribute('aria-label', 'close search');
+  iconBtn.ariaLabel = "close search";
   iconBtn.setAttribute('data-search-toggler','');
   searchWrapper.appendChild(iconBtn);
   
@@ -111,8 +107,7 @@ export default function loadPageStructure(){
 
   const headerBtn = document.createElement('button');
   headerBtn.classList.add('icon-btn', 'has-state');
-
-  headerBtn.setAttribute('aria-label', 'open search');
+  headerBtn.ariaLabel= 'open search';
   headerBtn.setAttribute('data-search-toggler','');
   headerActionsDiv.appendChild(headerBtn);
 
@@ -157,7 +152,7 @@ export default function loadPageStructure(){
   // current weather
   const section = document.createElement('section')
   section.classList.add('section', 'current-weather');
-  section.setAttribute('aria-label', 'current weather');
+  section.ariaLabel = 'current weather';
   section.setAttribute('data-current-weather', '');
   leftContent.appendChild(section);
 
@@ -229,7 +224,7 @@ export default function loadPageStructure(){
 
   const forecastSection = document.createElement('section');
   forecastSection.classList.add('section', 'forecast');
-  forecastSection.setAttribute('aria-labellebdy', 'forecast-label');
+  forecastSection.ariaLabellebdy = 'forecast-label';
   forecastSection.setAttribute('data-5-day-forecast','');
   
   leftContent.appendChild(forecastSection);
@@ -298,7 +293,7 @@ export default function loadPageStructure(){
   //  Highlights
   const highlightsSection = document.createElement('section')
   highlightsSection.classList.add('section', 'highlights');
-  highlightsSection.setAttribute('aria-labelledby', 'highlights-label');
+  highlightsSection.ariaLabellebdy = 'highlights-label';
   highlightsSection.setAttribute('data-highlights', '');
   rightContent.appendChild(highlightsSection);
 
@@ -539,7 +534,7 @@ export default function loadPageStructure(){
   // Hourly Forecast
   const hrForecastSection = document.createElement('section')
   hrForecastSection.classList.add('section', 'hourly-forecast');
-  hrForecastSection.setAttribute('aria-label', 'hourly forecast');
+  hrForecastSection.ariaLabel = 'hourly forecast'
   hrForecastSection.setAttribute('data-hourly-forecast', '');
   rightContent.appendChild(hrForecastSection);
 

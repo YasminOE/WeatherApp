@@ -4,6 +4,7 @@ import './style.css';
 import loadPageStructure from './modules/inital-load-page';
 import { fetchData , url } from './modules/api';
 import * as module from './modules/module';
+import './modules/route';
 
 init();
 
@@ -28,7 +29,6 @@ const addEventOnElements = function( elements , eventType, callback){
 
 const searchView = document.querySelector('[data-search-view]');
 const searchTogglers = document.querySelectorAll('[data-search-toggler]');
-const searchWrapper = document.querySelector('.search-wrapper');
 
 const toggleSearch = () => searchView.classList.toggle('active');
 
@@ -112,11 +112,12 @@ export const updateWeather = function(lat, lon){
   const highlightSection = document.querySelector('[data-highlights]');
   const hourlySection = document.querySelector('[data-hourly-forecast]');
   const forecastSection = document.querySelector('[data-5-day-forecast]');
-
+  
   currentWeatherSection.innerHTML = '';
   highlightSection.innerHTML = '';
   hourlySection.innerHTML = '';
   forecastSection.innerHTML = '';
+  
 
   if(window.location.hash === '#/current-location'){
     currentLocationBtn.setAttribute('disabled', '');
@@ -135,10 +136,10 @@ export const updateWeather = function(lat, lon){
       main: { temp, feels_like, pressure, humidity },
       visibility,
       timezone
-     } = currentWeather
-     const [{ description, icon }] = weather;
+    } = currentWeather;
+    const [{ description, icon }] = weather;
 
-     const card = document.createElement('div');
+     let card = document.createElement('div');
      card.classList.add('card', 'card-lg', 'current-weather-card');
 
      card.innerHTML = 
@@ -162,8 +163,9 @@ export const updateWeather = function(lat, lon){
         </li>
       </ul>
      `;
-     fetchData(url.reverseGeo(lat,lon), function([{name, country}]) {
-      card.querySelector('[data-location]').innerHTML = `${name}, ${country}`;
+     fetchData(url.reverseGeo(lat,lon), function([{name, country}])
+      {
+        card.querySelector('[data-location]').innerHTML = `${name}, ${country}`;
      });
      currentWeatherSection.appendChild(card);
 
@@ -302,7 +304,7 @@ export const updateWeather = function(lat, lon){
         } = data;
         const [{icon, description}] = weather;
 
-        const tempLi = document.createElement('li');
+        let tempLi = document.createElement('li');
         tempLi.classList.add('slider-item');
 
         tempLi.innerHTML = 
@@ -316,7 +318,7 @@ export const updateWeather = function(lat, lon){
 
         hourlySection.querySelector('[data-temp]').appendChild(tempLi);
 
-        const windLi = document.createElement('li');
+        let windLi = document.createElement('li');
         windLi.classList.add('slider-item');
 
         windLi.innerHTML = 
