@@ -9,10 +9,10 @@
   --primary: #B5A1E5; 
   --on-primary: #100E17; 
   --background: #131214;
-  --on-background: #EAE6F2;
+  --on-background: #e9e7db;
   --surface: #1D1C1F;
-  --on-surface: #DDDAE5;
-  --on-surface-variant: #7B7980; 
+  --on-surface: #E1DFD3;
+  --on-surface-variant: #6c6a63; 
   --on-surface-variant-2: #B9B6BF;
   --outline: #3E3D40;
   --bg-aqi-1: #89E589;
@@ -25,7 +25,7 @@
   --on-bg-aqi-4: #331F1F;
   --bg-aqi-5: #E589B7;
   --on-bg-aqi-5: #331F29;
-  --white: hsl(0, 0%, 100%);
+  --white: #E1DFD3;
   --white-alpha-4: hsla(0, 0%, 100%, 0.04);
   --white-alpha-8: hsla(0, 0%, 100%, 0.08);
   --black-alpha-10: hsla(0, 0%, 0%, 0.1);
@@ -313,6 +313,14 @@ body{
   font-size: var(--label-2);
 }
 
+.fade-in{
+  animation: fade-in 250ms ease forwards;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
 /* Header */
 
@@ -365,7 +373,7 @@ body{
   clip-path: circle(130% at 73% 5%);
 }
 
- .search-wrapper{
+.search-wrapper{
   position: relative;
   border-block-end: 1px solid var(--outline);
 
@@ -716,6 +724,7 @@ article.container::before{
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-block-end: 28px;
 }
  
 .footer{
@@ -789,14 +798,15 @@ article.container::before{
 
 
 /* Media quires */
-@media screen and (max-width : 768px) {
+@media (max-width : 768px) {
   .logo img {
     width: 90px;
   }
 }
+
 /* larger than 768px screens */
 
-@media screen and (min-width : 768px) {
+@media (min-width : 768px) {
   /* Reused Styles */
   .container {
     padding: 24px;
@@ -846,7 +856,6 @@ article.container::before{
   .search-view {
     clip-path: circle(3% at calc(100% - 273px) 6%);
   }
-
 
   /* Main */
 
@@ -922,7 +931,7 @@ article.container::before{
 
 /* large than 1200px screens */
 
-@media screen and (min-width : 1200px) {
+@media (min-width : 1200px) {
 
   /* custom property */
   :root{
@@ -1084,7 +1093,7 @@ article.container::before{
 
 /* large than 1400px screens */
 
-@media screen and (min-width : 1400px){
+@media (min-width : 1400px){
 
   .highlight-list {
     grid-template-columns: repeat(4, 1fr);

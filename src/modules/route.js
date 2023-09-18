@@ -1,10 +1,10 @@
-import _ from 'lodash';
-// import {updateWeather, error404} from './index'
 
 'use strict';
+import _ from 'lodash';
+import {updateWeather, error404} from '../index'
 
 
-const defaultLocation = '#/weather?lat=33.4068837&lon=35.371848'; // Khartoum
+const defaultLocation = '#/weather?15.5636&lon=32.5349'; // Khartoum
 
 const currentLocation = function(){
   window.navigator.geolocation.getCurrentPosition(res => {
@@ -20,12 +20,10 @@ const currentLocation = function(){
  * @param {string} query searched query
  */
 const searchedLocation = query => updateWeather(...query.split('&'));
-//updateWeather('lat=33.4068837', 'lon=35.371848');
-
+// updateWeather('lat=15.563597', 'lon=32.5349123');
 const routes = new Map([
   ['/current-location', currentLocation],
   ['/weather', searchedLocation]
-
 ]);
 
 const checkHash = function(){
