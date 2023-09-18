@@ -683,7 +683,7 @@ export default function loadPageStructure(){
   errorContent.appendChild(errorP);
 
   const errorHomeLink = document.createElement('a');
-  errorHomeLink.href = '#/weather?15.5636&lon=32.5349';
+  errorHomeLink.href = '#/weather?lat=15.5636&lon=32.5349';
   errorHomeLink.classList.add('btn-primary');
   errorContent.appendChild(errorHomeLink);
 
