@@ -8,6 +8,7 @@ const defaultLocation = '#/weather?lat=15.5636&lon=32.5349'; // Khartoum
 
 const currentLocation = function(){
   window.navigator.geolocation.getCurrentPosition(res => {
+    
     const {latitude, longitude} = res.coords;
     
     updateWeather(`lat=${latitude}`, `lon=${longitude}`);

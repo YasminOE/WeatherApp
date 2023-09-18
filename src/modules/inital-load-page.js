@@ -39,7 +39,7 @@ export default function loadPageStructure(){
   searchfield.classList.add('search-field');
   searchfield.placeholder= 'Search city ...';
   searchfield.autocomplete = 'off';
-  searchfield.setAttribute('data-search-field', '')
+  searchfield.setAttribute('data-search-field', '');
   searchWrapper.appendChild(searchfield);
   
   const searchIcon = document.createElement('span');
@@ -50,7 +50,11 @@ export default function loadPageStructure(){
   
   const iconBtn = document.createElement('button');
   iconBtn.classList.add('icon-btn','leading-icon', 'has-state');
-  iconBtn.setAttribute('aria-label', 'close search');
+  Object.assign(iconBtn,{
+    'aria-label': 'close search',
+    'data-search-toggler': ''
+  });
+  // iconBtn.setAttribute('aria-label', 'close search');
   iconBtn.setAttribute('data-search-toggler','');
   searchWrapper.appendChild(iconBtn);
   
@@ -107,6 +111,7 @@ export default function loadPageStructure(){
 
   const headerBtn = document.createElement('button');
   headerBtn.classList.add('icon-btn', 'has-state');
+
   headerBtn.setAttribute('aria-label', 'open search');
   headerBtn.setAttribute('data-search-toggler','');
   headerActionsDiv.appendChild(headerBtn);
